@@ -8,6 +8,7 @@ import com.envyful.poke.removal.forge.PokeRemovalForge;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 @Command(
         value = "pokeremoval",
@@ -19,6 +20,6 @@ public class PokeRemovalCommand {
     @CommandProcessor
     public void onCommand(@Sender ICommandSource sender, String[] args) {
         PokeRemovalForge.getInstance().reloadConfig();
-        sender.sendMessage(new StringTextComponent("Reloaded config!"), Util.NIL_UUID);
+        sender.sendMessage(new StringTextComponent("Reloaded config!").withStyle(TextFormatting.GOLD), Util.NIL_UUID);
     }
 }
